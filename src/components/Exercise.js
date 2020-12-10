@@ -20,6 +20,7 @@ const Excercise = () => {
 
 	const handleChange = (e) => {
 		const newNumber = e.target.value;
+		if (isNaN(newNumber)) return;
 		setNumber(Number(newNumber));
 	};
 
