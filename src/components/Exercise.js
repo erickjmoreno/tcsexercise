@@ -15,6 +15,7 @@ const Excercise = () => {
 		} else {
 			setIsFibonacci(false);
 		}
+		setNumber(0);
 	};
 
 	const handleChange = (e) => {
@@ -46,10 +47,12 @@ const Excercise = () => {
 			<form style={formStyle} onSubmit={(e) => onSubmit(e, number)}>
 				Verify number belongs to the series
 				<br />
-				<input placeholder="#" onChange={handleChange} value={number} />
-				<button>&rarr;</button>
+				<input placeholder="#" onChange={handleChange} value={number} data-testid="input" />
+				<button data-testid="submitButton">&rarr;</button>
 			</form>
-			<div style={divStyle}>{isFibonacci ? "Belongs to series" : "Number not in series"}</div>
+			<div data-testid="seriesCheck" style={divStyle}>
+				{isFibonacci ? "Belongs to series" : "Number not in series"}
+			</div>
 		</div>
 	);
 };
